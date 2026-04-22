@@ -123,7 +123,7 @@ class AeonRecordMapper
     end
     
     def configured?
-        return true if self.repo_settings
+        return true if self.repo_settings.present?
     end
 
     # This method tests whether the button should be hidden. This determination is based
