@@ -96,7 +96,7 @@ class AeonRecordMapper
     end
 
     def unrequestable_display_message
-        if !(self.repo_settings)
+        if !(self.configured?)
             return "";
         end
 
@@ -130,7 +130,7 @@ class AeonRecordMapper
     # on the settings for the repository and defaults to false.
     def hide_button?
         # returning false to maintain the original behavior
-        return false unless self.repo_settings
+        return false unless self.configured?
 
         if self.repo_settings[:hide_request_button]
             return true
